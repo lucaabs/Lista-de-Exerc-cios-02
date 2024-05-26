@@ -18,7 +18,7 @@ function fillVector(vec,size,vecEven){
 
 let nomes = new Array
 let vecPar = new Array
-fillVector(nomes,10,vecPar)
+fillVector(nomes,10,vecPar) /* O exercício está pedindo somente 10 numeros então coloco 10 para o size */
 
 console.log('\n Os números inseridos foram \n'.green)
 console.log(nomes.join(', '))
