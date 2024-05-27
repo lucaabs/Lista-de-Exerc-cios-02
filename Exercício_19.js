@@ -13,7 +13,7 @@ function fill(horario,size){    /* função macro para preencher o array com os 
 for (i=0;i<size;i++){
     hora = parseInt(prompt((i+1)+'º Horário: Digite o campo das horas entre 00 e 23: '))
     while(isNaN(hora) || 0>hora || hora>=23){hora = parseInt(prompt('Valor Inválido'.red+(i+1)+'º Horário: Digite o campo das horas entre 01 e 23: '))}
-    hora = addZero(hora)
+    hora = addZero(hora)   /* os testes de validação estão dentro das estruturas while em todos os casos */
 
     minuto = parseInt(prompt(i+1+'º Horário: Digite o campo das minutos entre 00 e 59: ' ))
     while(isNaN(minuto) || 0>minuto || minuto>=59){minuto = parseInt(prompt('Valor Inválido'.red+(i+1)+'º Horário: Digite o campo dos minutos entre 00 e 59: '))}
@@ -24,11 +24,10 @@ for (i=0;i<size;i++){
     segundo = addZero(segundo)
 
 horario.push(hora+':'+minuto+':'+segundo)
-
 }
 }
 
 let arrayHorario = []
 fill(arrayHorario,5)
 
-console.log('Os horários insderidos foram: '.green+arrayHorario.join(', '))
+console.log('Os horários insderidos no formato HH.MM.SS foram: '.green+arrayHorario.join(', '))
