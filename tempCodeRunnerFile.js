@@ -1,1 +1,1 @@
-typeCar
+console.log(vec)
