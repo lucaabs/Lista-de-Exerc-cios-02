@@ -13,10 +13,10 @@ function fill(numLinhas,numColunas){
             matrix[i][j]=Math.floor(10*Math.random())            
         }
     }
-     return matrix
+         return matrix
 }
 
-matrix1 = fill (3,5)
+matrix1 = fill(3,5)
 matrix2 = fill(5,3)
 
 console.log(matrix1)
