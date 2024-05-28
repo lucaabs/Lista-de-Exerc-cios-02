@@ -1,1 +1,1 @@
-console.log(vec)
+2

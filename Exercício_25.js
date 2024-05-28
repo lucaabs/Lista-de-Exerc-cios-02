@@ -26,16 +26,18 @@ function fill(nLinhas,nColuna){
 
 fill(15,20)
 
-function somaCol(nLin,nCol){
+function somaCol(nLin,nCol){                 /* essa função vai somar os elementos da coluna, para isso vou fixar o numero
+                                            da coluna (j) e somar os números indexados pelos linhas (i) */
     for(var j =0; j<nCol;j++){
         for(var i = 0;i<nLin;i++){
-        somar = somar + matriz[i][j]
-        vec[j]=somar
-        }somar =0
+        somar = somar + matriz[i][j]           /* somar vai armazenar a soma de todos os elementos de uma coluna */
+        }
+        vec[j]=somar               /* após a soma toda feita, armazenar no vec */
+        somar = 0                 /* zerar o somar para começar a proxima soma pra um j diferente */
     }
     
     for(var i = 0;i<vec.length;i++){
-        console.log('\nA soma da '+(i+1)+'ª coluna é: '+vec[i])
+        console.log('\nA soma da '+(i+1)+'ª coluna é: '+vec[i])    /* array com as somas vou organizar o console */
     }
 
 }
