@@ -20,7 +20,7 @@ function criarMatriz(numLinhas,numColunas){
          
 }
 
-matrix1 = criarMatriz(10,10)  /* entrada 6,6 gera a matriz 6 por 6 */
+matrix1 = criarMatriz(10,10)  /* entrada 10,10 gera a matriz 10 por 10 */
 
 /* agora vamo fazer a função que vai receber essa matriz e calcular a soma dos elementos acima e abaixo da diagonal principal */
 

@@ -4,9 +4,6 @@ const colors = require('colors')
 /* vou gerar a matriz 5x5 aleatoriamente com o algoritmo que já usei nas questões anteriores, basta mudar o numLinhas e o numColunas na entrada */
 /* vou adicionar agora elementos entre -9 e 9 usando a função Math.random e multiplicando a por um número negativo */
 
-vecSL = []
-vecSC = []
-
 function criarMatriz(numLinhas,numColunas){
     var matrix = []
     var matrixFormat = []
@@ -28,8 +25,11 @@ function criarMatriz(numLinhas,numColunas){
          
 }
 
-matrix1 = criarMatriz(5,5)  /* entrada 6,6 gera a matriz 6 por 6 */
+matrix1 = criarMatriz(5,5)  /* entrada 5,5 gera a matriz 5 por 5 */
 
+
+vecSL = [] /* vou armazenar o vetor da soma das colunas no vecSL */
+vecSC = [] /* vou armazenar o vetor da soma das colunas no vecSC */
 /* vamos criar a função que encontra os itens pedidos na questão */
 
 function fill(mat1){
@@ -51,5 +51,5 @@ function fill(mat1){
 
 fill(matrix1)
 
-console.log('\nO vetor criado com cada elemento sendo a soma das linhas é: ',vecSL)
-console.log('\nO vetor criado com cada elemento sendo a soma das colunas é: ',vecSC)
+console.log('\nO vetor criado com cada elemento sendo a soma das respectivas linhas é: '.magenta,vecSL)
+console.log('\nO vetor criado com cada elemento sendo a soma das respectivas colunas é: '.green,vecSC)
