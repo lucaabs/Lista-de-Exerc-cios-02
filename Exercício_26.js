@@ -2,8 +2,6 @@ const prompt = require('prompt-sync')()
 const colors = require('colors')
 
 /* vou gerar as duas matrizes aleatoriamente */
-let matrixProd = []
-
 
 function fill(numLinhas,numColunas){
     var matrix = []
@@ -27,9 +25,9 @@ function produto(matriz1,matriz2){
             matriz3[a][b] = []
             var somatorio = 0
             for(var c=0;c<matriz1[0].length;c++){   /* índice que varia entre 0 e 4 para pegar cada elemento */
-                somatorio = (matriz1[a][c]*matriz2[c][b]) + somatorio
+                somatorio = (matriz1[a][c]*matriz2[c][b]) + somatorio /* o somatorio registra o somatorio dos produtos */
             }
-            matriz3[a][b]=somatorio
+            matriz3[a][b]=somatorio  /* aqui definimos cada elemento da matriz3 que vai ser o produto */
         }
     }
     return matriz3
@@ -38,7 +36,7 @@ function produto(matriz1,matriz2){
 matrix3 = produto(matrix1,matrix2)
 
 function ImprimirMatrizes(matriz1,matriz2,matriz3){
-    console.log('\nA matriz A é igual a: \n'.yellow)
+    console.log('\nA matriz A é igual a: \n'.yellow)    /* criei uma outra função para imprimir todas as matrizes */
     for(x=0;x<matriz1.length;x++){
         console.log(matriz1[x].join(' '))
     }
