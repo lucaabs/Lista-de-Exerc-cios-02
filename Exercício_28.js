@@ -2,6 +2,7 @@ const prompt = require('prompt-sync')()
 const colors = require('colors')
 
 /* vou gerar a matriz 10x10 aleatoriamente com o algoritmo que já usei nas questões anteriores, basta mudar o numLinhas e o numColunas na entrada */
+/* lembrando que esse modelo escolhe numeros entre 1 e 9, sem os negativos para cada posição da matriz */
 
 function criarMatriz(numLinhas,numColunas){
     var matrix = []

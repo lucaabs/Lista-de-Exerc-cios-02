@@ -2,6 +2,7 @@ const prompt = require('prompt-sync')()
 const colors = require('colors')
 
 /* vou gerar as duas matrizes aleatoriamente */
+/* lembrando que esse modelo escolhe numeros entre 1 e 9, sem os negativos para cada posição da matriz */
 
 function fill(numLinhas,numColunas){
     var matrix = []

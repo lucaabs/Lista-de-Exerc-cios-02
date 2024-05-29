@@ -4,6 +4,9 @@ const colors = require('colors')
 /* vou gerar a matriz 5x5 aleatoriamente com o algoritmo que já usei nas questões anteriores, basta mudar o numLinhas e o numColunas na entrada */
 /* vou adicionar agora elementos entre -9 e 9 usando a função Math.random e multiplicando a por um número negativo */
 
+vecSL = []
+vecSC = []
+
 function criarMatriz(numLinhas,numColunas){
     var matrix = []
     var matrixFormat = []
@@ -20,7 +23,7 @@ function criarMatriz(numLinhas,numColunas){
     console.log('\nA matriz '+numLinhas+'x'+numColunas+' aleatória gerada é: \n')
          for(i=0;i<numLinhas;i++){
          console.log(matrixFormat[i].join(' ')) /* exibir a matriz formatada com os espaços adicionais em numeros positivos */
-         }     
+         }
     return matrix
          
 }
@@ -29,30 +32,24 @@ matrix1 = criarMatriz(5,5)  /* entrada 6,6 gera a matriz 6 por 6 */
 
 /* vamos criar a função que encontra os itens pedidos na questão */
 
-function fill(matrix1){
-    var somaLinha4 = 0
-    var somaCol2 = 0
-    var somaDiagPrin = 0
-    var SomaTodos = 0
-    for(i=0;i<matrix1.length;i++){
-        for(j=0;j<matrix1.length;j++){
-            SomaTodos = matrix1[i][j] + SomaTodos
-            if(i==3){
-                somaLinha4 =  matrix1[i][j]+somaLinha4 
-            }
-            if(j==1){
-                somaCol2 = matrix1[i][j]+somaCol2
-            }
-            if(i==j){
-                somaDiagPrin = matrix1[i][j]+somaDiagPrin
-            }
-                 
+function fill(mat1){
+    var matSL = []
+    var matSC = []
+    for(i=0;i<mat1.length;i++){
+        var somaLinhas = 0
+        var somaColunas = 0
+        for(j=0;j<mat1[i].length;j++){
+            somaLinhas = mat1[i][j]+somaLinhas
+            somaColunas = mat1[j][i]+somaColunas
         }
-        
-    }console.log('\na)Soma dos elementos da linha 4: '.yellow+somaLinha4)
-    console.log('\nb)Soma dos elementos da coluna 2: '.magenta+somaCol2)
-    console.log('\nc)Soma dos elementos da diagonal principal: '.red+somaDiagPrin)
-    console.log('\nd)Soma de todos os elementos: '.green+SomaTodos)
+        matSL.push(somaLinhas)
+        matSC.push(somaColunas)
+    }
+    vecSL = matSL
+    vecSC = matSC
 }
 
 fill(matrix1)
+
+console.log('\nO vetor criado com cada elemento sendo a soma das linhas é: ',vecSL)
+console.log('\nO vetor criado com cada elemento sendo a soma das colunas é: ',vecSC)

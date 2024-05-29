@@ -6,6 +6,7 @@ let contador = 0
 let vecC = []
 
 /* primeiro vou criar uma matriz aleatória 6 por 8 */
+/* lembrando que esse modelo escolhe numeros entre 1 e 9, sem os negativos para cada posição da matriz */
 
 function fill(nLinhas,nColuna){
     for(var i = 0;i<nLinhas;i++){

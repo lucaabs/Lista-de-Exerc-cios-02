@@ -7,6 +7,7 @@ let vec = []
 
 /* vou usar a função da questão passada para criar essa matriz 15x20 com elementos entre -9 e 9 em cada posição
 so preciso alterar o parâmetro de número de linha e número de coluna para 10 e 20 */
+/* lembrando que esse modelo escolhe numeros entre 1 e 9, sem os negativos para cada posição da matriz */
 
 function fill(nLinhas,nColuna){
     for(var i = 0;i<nLinhas;i++){
