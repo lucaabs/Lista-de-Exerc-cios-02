@@ -1,2 +1,1 @@
-
-            }
+onsole.log(vetorPar.join(' '))

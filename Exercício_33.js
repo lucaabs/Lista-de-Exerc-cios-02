@@ -1,7 +1,7 @@
 const prompt = require('prompt-sync')()
 const colors = require('colors')
 
-/* vou gerar a matriz 12x13 aleatoriamente com o algoritmo que já usei nas questões anteriores, basta mudar o numLinhas e o numColunas na entrada */
+/* vou gerar a matriz 3x3 aleatoriamente com o algoritmo que já usei nas questões anteriores, basta mudar o numLinhas e o numColunas na entrada */
 /* vou adicionar agora elementos entre -9 e 9 usando a função Math.random e multiplicando a por um número negativo */
 
 function criarMatriz(numLinhas,numColunas){
