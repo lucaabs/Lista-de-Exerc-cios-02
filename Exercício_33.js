@@ -24,47 +24,30 @@ function criarMatriz(numLinhas,numColunas){
     return matrix
          
 }
-matrix1 = criarMatriz(12,13)
+matrix1 = criarMatriz(3,3)
 
-/* vou criar uma função para localizar o maior elemento de cada linha e escrever um array com esses elementos maiores pra depois dividir as linhas
-por esses elementos da matrix2 */
-
-function LocalizarMaior(mat1){
-    var mat2 = []
+function mediaElemDiagSec(mat1){
+    var soma = 0
     for(i=0;i<mat1.length;i++){
-        var maiorMod = Math.abs(mat1[i][0])
         for(j=0;j<mat1[i].length;j++){
-            if (Math.abs(mat1[i][j])>=maiorMod){
-                maiorMod = Math.abs(mat1[i][j])
-                }
-        } mat2.push(maiorMod)
+            if((i+j)==(mat1.length-1)){       /* diag secundária sempre tera i+j = mat1.length-1 */
+                soma += mat1[i][j]                 /* soma dos elementos da diagonal sec */
+            }
+        }
+    }media = soma/(mat1.length)              /* média  */
+    console.log('\nA média dos elementos da diagonal secundária é: '.green+media.toFixed(2)+'\n')
+    var mat2 = []                 /* a matriz dois vai ter os novos valores depois do produto */
+    for(i=0;i<mat1.length;i++){
+        mat2[i]=[]
+        for(j=0;j<mat1[i].length;j++){
+            if(i==j){mat2[i][j]=(media*mat1[i][j]).toFixed(2)}     /* estou colocando até a segunda casa decimal já que a média pode ser um número decimal */
+            else (mat2[i][j]=mat1[i][j])
+        }
+    }     console.log('A matrix 3x3 com os elementos da diagonal principal multiplicados pela média dos elementos da diagonal secundária é: \n'.magenta)
+    for(i=0;i<mat2.length;i++){
+        console.log(mat2[i].join('  '))
     }
-      return mat2
 }
 
-matrix2 = LocalizarMaior(matrix1)
-console.log('\nOs maiores elementos, em módulo, de cada linha são:\n')
-console.log(matrix2.join( ' , ').magenta+'\n')
-console.log('Dividindo cada linha da matriz 12x13 por seu maior elemento em módulo teremos:\n'.green)
+mediaElemDiagSec(matrix1)
 
-/* agora criar a função aonde eu divido cada linha da matrix1 pelos elementos da matrix2. Dentro da função essa é a mat3, eu ainda vou criar
-uma mat3Format para formatar os valores e adicionar um espaço vazio se o número for positivo para os números ficaram enfileirados certinho
-quando chamar o console.log */
-
-function dividirElementos (mat1){
-    var mat3 = []
-    var mat3Format = []
-    for(i=0;i<mat1.length;i++){
-        mat3[i]=[]
-        mat3Format[i]=[]
-        for(j=0;j<mat1[i].length;j++){
-            (mat3[i][j])=((mat1[i][j])/(matrix2[i])).toFixed(2)
-            if(mat3[i][j]>=0){mat3Format[i][j]=' '+mat3[i][j]}   /* adicionando o espaço vazio */
-            else (mat3Format[i][j]=mat3[i][j])
-        }
-    }for(i=0;i<mat3Format.length;i++){
-        console.log(mat3Format[i].join(' ')) /* exibir a matriz formatada com os espaços adicionais em numeros positivos */
-        }
-}
-
-dividirElementos(matrix1)
