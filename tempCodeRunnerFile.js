@@ -1,1 +1,1 @@
-onsole.log(vetorPar.join(' '))
+vecA.sort((a, b) => a - b)
