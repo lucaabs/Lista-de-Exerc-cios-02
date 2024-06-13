@@ -1,1 +1,1 @@
-opcao = prompt('Escreva o nome de um dos usuários para adicionar o seu respectivo email: ')
+console('\nAs transções financeiras no mês de janeiro foram:\n'.yellow)
