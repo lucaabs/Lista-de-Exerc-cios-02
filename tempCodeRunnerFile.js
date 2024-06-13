@@ -1,1 +1,1 @@
-vecA.sort((a, b) => a - b)
+opcao = prompt('Escreva o nome de um dos usuários para adicionar o seu respectivo email: ')
