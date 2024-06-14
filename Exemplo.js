@@ -111,13 +111,17 @@ function Hotel(id, nome, cidade, quartosTotais, quartosDisponiveis) {
   // Listar hotéis em uma cidade específica
   buscarHoteisPorCidade("São Paulo");
   
+console.log(hoteis)
+
   // Fazer algumas reservas
   fazerReserva(1, 1, "Cliente 1");
   fazerReserva(2, 2, "Cliente 2");
   fazerReserva(3, 1, "Cliente 3");
   
-  // Cancelar uma reserva
+console.log(hoteis)
+
+/*   // Cancelar uma reserva
   cancelarReserva(2);
   
   // Listar todas as reservas
-  listarReservas();
+  listarReservas(); */

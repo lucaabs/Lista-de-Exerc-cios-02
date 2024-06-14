@@ -25,7 +25,7 @@ console.log(arrayObjetos)
 
 let novoObjeto= {}
 
-arrayObjetos.forEach(element => {
+arrayObjetos.forEach(element => {         /* correr por todos os elementos do array */
     if(novoObjeto['id das transações da categoria '+element.categoria]){
         novoObjeto['id das transações da categoria '+element.categoria].push(element.id)
         novoObjeto['Total das transações do tipo '+element.categoria+' em R$'] = novoObjeto['Total das transações do tipo '+element.categoria+' em R$'] + element.valor
